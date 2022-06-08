@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components';
 import Slider from './Slider';
 import { useEffect, useRef, useState } from 'react';
-import { images } from '../../public/images';
+import { images } from '../public/images';
 import Image from 'next/image';
 
 const transition: AnimationOptions<any> = {
@@ -16,7 +16,7 @@ const transition: AnimationOptions<any> = {
   bounce: 0,
 };
 
-export const Carousel = ({ loop = true }) => {
+const Carousel = ({ loop = true }) => {
   const imageList = Object.values(images);
   const x = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -68,6 +68,8 @@ export const Carousel = ({ loop = true }) => {
     </Container>
   );
 };
+
+export default Carousel;
 
 const Container = styled.div`
   position: relative;

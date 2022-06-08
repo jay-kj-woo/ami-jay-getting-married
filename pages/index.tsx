@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { NextPage } from 'next';
 import { useState } from 'react';
 import styled from 'styled-components';
-import InitialLoadingContent from './components/InitialLoadingContent';
-import MainContent from './components/MainContent';
+import InitialLoadingContent from '../components/InitialLoadingContent';
+import MainContent from '../components/MainContent';
 
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true);
