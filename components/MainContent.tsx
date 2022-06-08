@@ -27,7 +27,6 @@ const MainContent = () => {
 export default MainContent;
 
 const Wrapper = styled.div`
-  background-color: #ee9ef5;
   width: 100%;
 `;
 
