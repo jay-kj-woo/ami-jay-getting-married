@@ -1,16 +1,18 @@
-function importAll(r: __WebpackModuleApi.RequireContext) {
-  let images = {};
-  r.keys().forEach((item) => {
-    images[item.replace('./', '')] = r(item).default;
-    // images[index] = r(item).default;
+interface StaticImageData {
+  src: string;
+  height: number;
+  width: number;
+  blurDataURL?: string;
+}
+interface StaticImageDataObject {
+  [index: string]: StaticImageData;
+}
+function importAll(moduleContext: __WebpackModuleApi.RequireContext) {
+  let images: StaticImageDataObject = {};
+  moduleContext.keys().forEach((item) => {
+    images[item.replace('./', '')] = moduleContext(item).default;
   });
   return images;
-  //   return r.keys();
-  //   return r.keys().map((item) => r(item));
 }
 
 export const images = importAll(require.context('./', false, /\.jpg$/));
-
-// import photo1 from './photo1.jpg';
-
-// export const images = { photo1 };
