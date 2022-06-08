@@ -11,13 +11,20 @@ const Home: NextPage = () => {
   return (
     <SiteWrapper>
       <MobileContentWrapper>
-        <AnimatePresence>
-          {isLoading && (
-            <MotionDiv key={'motion1'} exit={{ opacity: 0 }}>
+        <AnimatePresence exitBeforeEnter={true}>
+          {isLoading ? (
+            <MotionDiv
+              key={'initialLoadingContent'}
+              transition={{ duration: 2 }}
+              exit={{ opacity: 0 }}
+            >
               <InitialLoadingContent setIsLoading={setIsLoading} />
             </MotionDiv>
+          ) : (
+            <MotionDiv key={'mainContent'}>
+              <MainContent />
+            </MotionDiv>
           )}
-          {!isLoading && <MainContent />}
         </AnimatePresence>
       </MobileContentWrapper>
     </SiteWrapper>
@@ -29,7 +36,7 @@ const Home: NextPage = () => {
 const SiteWrapper = styled.div`
   background-color: #d2d2d2;
   max-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 `;
@@ -38,11 +45,14 @@ const MobileContentWrapper = styled.div`
   background-color: #e1b9b9;
   width: 420px;
   max-width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const MotionDiv = styled(motion.div)``;
+const MotionDiv = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+`;
 export default Home;
