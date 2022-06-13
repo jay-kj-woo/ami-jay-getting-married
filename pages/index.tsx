@@ -53,5 +53,6 @@ const MotionDiv = styled(motion.div)`
   width: 100%;
   max-width: 420px;
   height: 100vh;
+  z-index: 2000;
 `;
 export default Home;

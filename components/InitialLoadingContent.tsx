@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Dispatch, SetStateAction, useState } from 'react';
 import styled from 'styled-components';
-
+import buried from '../public/buried.png';
 interface Props {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
@@ -26,5 +26,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #a99ded;
+  color: #e2e2e2;
+  background-color: #004a23;
+  background-image: url('/buried.png');
+  z-index: 2000;
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 `;

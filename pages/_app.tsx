@@ -5,6 +5,9 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
  ${reset};
+ *, body {
+  font-family: 'Nanum Pen Script', cursive;
+ }
 `;
 
 function App({ Component, pageProps }: AppProps) {
