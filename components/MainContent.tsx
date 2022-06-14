@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Calender from './Calender';
+import Map from './Map';
 import SwipePhotos from './SwipePhotos';
 
 const MainContent = () => {
@@ -19,6 +20,7 @@ const MainContent = () => {
       <button onClick={onShowFullPhoto}> 포토 보기</button>
       {showFullPhoto && <SwipePhotos setShowFullPhoto={setShowFullPhoto} />}
       <Calender />
+      <Map />
       <Spacer>스페이서</Spacer>
     </Wrapper>
   );
