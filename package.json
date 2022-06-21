@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@styled-icons/heroicons-outline": "^10.36.0",
     "framer-motion": "^6.3.10",
     "framer-motion-carousel": "^1.0.7",
     "hangul-js": "^0.2.6",

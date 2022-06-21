@@ -10,7 +10,9 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
   // const onSetLoadingComplete = () => {
   //   setIsLoading(false);
   // };
-  const { innerText, isTypingComplete } = useTypeHangul('우경제, 우아미, 결혼');
+  const text = '우경제 우아미 결혼합니다.';
+  const typingInterval = 150;
+  const { innerText, isTypingComplete } = useTypeHangul(text, typingInterval);
   useEffect(() => {
     if (isTypingComplete) {
       setIsLoading(false);
@@ -19,7 +21,7 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
 
   return (
     <Wrapper>
-      <div className="textRef">{innerText}</div>
+      <TypingText>{innerText}</TypingText>
       {/* <button onClick={onSetLoadingComplete}>로딩 종료 : 메인 화면 이동</button> */}
     </Wrapper>
   );
@@ -33,11 +35,16 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #c8a062;
-  /* color: #e2e2e2; */
-  background-color: #0a4b2b;
-  /* background-color: #004a23; */
-  background-image: url('/buried.png');
+  /* color: #c8a062; */
+  color: #e2e2e2;
+  /* background-color: #0a4b2b; */
+  background-color: #548365;
+  /* background-image: url('/buried.png'); */
   z-index: 2000;
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+`;
+
+const TypingText = styled.div`
+  font-size: 20px;
+  font-weight: 600;
 `;

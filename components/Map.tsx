@@ -39,15 +39,13 @@ const Map = () => {
           href={'https://map.kakao.com/link/search/빌라드지디수서'}
           target="_blank"
         >
-          카카오지도 보기
+          <MapText map="kakao">카카오지도 보기</MapText>
         </LinkToMap>
         <LinkToMap
-          href={
-            'nmap://search?query=%EB%B9%8C%EB%9D%BC%EB%93%9C%EC%A7%80%EB%94%94%EC%88%98%EC%84%9C'
-          }
+          href={'https://m.place.naver.com/place/1973278943/home'}
           target="_blank"
         >
-          네이버 지도 보기
+          <MapText map="naver">네이버지도 보기</MapText>
         </LinkToMap>
       </ButtonContainer>
     </Wrapper>
@@ -60,7 +58,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 300px;
+  height: 500px;
 `;
 const KakaoMap = styled.div`
   width: 100%;
@@ -72,7 +70,29 @@ const ButtonContainer = styled.div`
 `;
 
 const LinkToMap = styled.a`
-  background-color: #fff;
-  border: 1px solid #000;
+  flex: 1;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+`;
+
+const MapText = styled.div<{ map: 'kakao' | 'naver' }>`
+  /* background: left center no-repeat; */
+  background-image: ${(props) =>
+    props.map === 'kakao'
+      ? `url('/icons/kakao_map_icon.png')`
+      : `url('/icons/naver_map_icon.png')`};
+  background-color: ${(props) =>
+    props.map === 'kakao' ? '#fbe300' : '#f4fdff'};
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #202020;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  /* vertical-align: middle;
+  height: 100%; */ ;
 `;

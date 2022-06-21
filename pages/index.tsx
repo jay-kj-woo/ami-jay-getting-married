@@ -40,7 +40,7 @@ const SiteWrapper = styled.div`
 
 const MobileContentWrapper = styled.div`
   position: relative;
-  background-color: #e1b9b9;
+  background-color: #548365;
   width: 420px;
   max-width: 100%;
   min-height: 100vh;
