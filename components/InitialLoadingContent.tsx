@@ -47,4 +47,5 @@ const Wrapper = styled.div`
 const TypingText = styled.div`
   font-size: 20px;
   font-weight: 600;
+  color: ${(props) => props.theme.colors.textBright};
 `;

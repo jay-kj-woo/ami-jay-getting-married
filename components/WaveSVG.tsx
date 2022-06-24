@@ -21,21 +21,26 @@ const WaveSVG = () => {
           xlinkHref="#gentle-wave"
           x="48"
           y="0"
-          fill="rgba(255,255,255,0.7"
+          fill="rgba(249,246,241,0.7"
         />
         <use
           xlinkHref="#gentle-wave"
           x="48"
           y="3"
-          fill="rgba(255,255,255,0.5)"
+          fill="rgba(249,246,241,0.5)"
         />
         <use
           xlinkHref="#gentle-wave"
           x="48"
           y="5"
-          fill="rgba(255,255,255,0.3)"
+          fill="rgba(249,246,241,0.3)"
         />
-        <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+        <use
+          xlinkHref="#gentle-wave"
+          x="48"
+          y="7"
+          fill="rgba(249,246,241,0.2)"
+        />
       </StyledG>
     </StyledSVG>
   );
@@ -56,7 +61,7 @@ const StyledSVG = styled.svg`
   position: relative;
   width: 100%;
   /* height: 15vh; */
-  margin-bottom: -7px; /*Fix for safari gap*/
+  /* margin-bottom: -7px; Fix for safari gap */
   min-height: 40px;
   max-height: 40px;
 `;

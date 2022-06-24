@@ -8,7 +8,7 @@ import {
 import styled from 'styled-components';
 import Slider from './Slider';
 import { useEffect, useRef, useState } from 'react';
-import { images } from '../public/images';
+import { images } from '../public/images/gallery';
 import Image from 'next/image';
 
 const transition: AnimationOptions<any> = {

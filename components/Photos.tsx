@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SectionTitle } from './Styles';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { images } from '../public/images';
+import { images } from '../public/images/gallery';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -34,7 +34,8 @@ const Photos = () => {
           >
             {imageList.map((image) => (
               <SwiperSlide key={image.src}>
-                <Image src={image} objectFit="contain" />
+                {/*might just use regular Img tag since, next/image is not loaed out of viewport  */}
+                <Image src={image} objectFit="contain" priority />
               </SwiperSlide>
             ))}
           </SwiperMain>
@@ -49,7 +50,7 @@ const Photos = () => {
           >
             {imageList.map((image) => (
               <SwiperSlide key={image.src}>
-                <Image src={image} objectFit="cover" />
+                <Image src={image} objectFit="cover" priority />
               </SwiperSlide>
             ))}
           </ThumbSlider>
@@ -67,7 +68,7 @@ const Wrapper = styled.div`
 `;
 
 const SwiperContainer = styled(motion.div)`
-  height: 90vh;
+  height: calc(var(--vh, 1vh) * 90);
   max-height: 750px;
 `;
 

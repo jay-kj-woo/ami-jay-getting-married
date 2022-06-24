@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Calender from './Calender';
 import Contact from './Contact';
+import Copyright from './Copyright';
+import Finale from './Finale';
 import Gratitude from './Gratitude';
 import InvitationBlock from './InvitationBlock';
 import LandingBlock from './LandingBlock';
@@ -25,15 +27,14 @@ const MainContent = () => {
   return (
     <Wrapper>
       <LandingBlock />
-
       <InvitationBlock />
       <Photos />
       <Calender />
       <Location />
       <Gratitude />
       <Contact />
-
-      <Spacer>스페이서</Spacer>
+      <Finale />
+      <Copyright />
     </Wrapper>
   );
 };
@@ -45,8 +46,4 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-`;
-
-const Spacer = styled.div`
-  height: 200vh;
 `;

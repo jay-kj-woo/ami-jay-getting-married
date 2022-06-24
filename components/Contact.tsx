@@ -132,14 +132,14 @@ const IconContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   a {
-    margin: 0 10px;
+    margin: 0 12px;
   }
 `;
 
 const PhoneIcon = styled(Phone)<{ isGroom?: boolean }>`
-  height: 20px;
+  height: 26px;
   fill: ${(props) => (props.isGroom ? `#78c0e9` : `#f79e9e`)};
 `;
 const SMSIcon = styled(Mail)`
-  height: 20px;
+  height: 26px;
 `;
