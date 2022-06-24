@@ -2,6 +2,7 @@ import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Calender from './Calender';
+import Contact from './Contact';
 import Gratitude from './Gratitude';
 import InvitationBlock from './InvitationBlock';
 import LandingBlock from './LandingBlock';
@@ -25,18 +26,13 @@ const MainContent = () => {
     <Wrapper>
       <LandingBlock />
 
-      {/* <WaveSVG /> */}
-      {/* <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        // viewport={{ once: true, amount: 0.8 }}
-      > */}
       <InvitationBlock />
       <Photos />
       <Calender />
       <Location />
       <Gratitude />
-      {/* </motion.div> */}
+      <Contact />
+
       <Spacer>스페이서</Spacer>
     </Wrapper>
   );

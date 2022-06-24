@@ -75,16 +75,24 @@ Accordion.Item = Item;
 const AccordionContainer = styled.div`
   width: 300px;
   margin: 0 auto;
+  margin-top: 100px;
+
   display: flex;
   flex-direction: column;
   box-shadow: 1px 2px 3px 0 #ccc;
   border-radius: 6px;
   background: #fff;
+  & + & {
+    margin-top: 20px;
+  }
 `;
 
 const AccordionHeader = styled.div`
   position: relative;
   height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #000;
 `;
@@ -104,7 +112,7 @@ const AccordionDownArrow = styled(ChevronDown)<{ isExpanded: boolean }>`
 `;
 
 const AccordionList = styled.div<{ isExpanded: boolean }>`
-  height: ${(props) => (props.isExpanded ? '210px' : '0')};
+  height: ${(props) => (props.isExpanded ? '219px' : '0')};
   transition: height 0.5s ease;
   overflow: hidden;
   display: flex;
@@ -112,23 +120,22 @@ const AccordionList = styled.div<{ isExpanded: boolean }>`
 `;
 
 const AccordionItem = styled.div`
-  flex: 1;
   position: relative;
-  padding: 10px;
+  padding: 6px;
   border-top: 1px solid #eee;
   display: flex;
   flex-direction: column;
 `;
 
 const Name = styled.div`
-  flex: 1;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const AccountNumber = styled.div`
-  flex: 1;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;

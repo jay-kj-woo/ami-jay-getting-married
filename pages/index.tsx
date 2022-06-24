@@ -22,7 +22,7 @@ const Home: NextPage = () => {
             </MotionDiv>
           )}
         </AnimatePresence>
-        <MainContent />
+        {!isLoading && <MainContent />}
       </MobileContentWrapper>
     </SiteWrapper>
   );
@@ -40,7 +40,9 @@ const SiteWrapper = styled.div`
 
 const MobileContentWrapper = styled.div`
   position: relative;
-  background-color: #548365;
+  /* background-color: #548365; */
+  background-color: ${(props) => props.theme.colors.background};
+  /* color: ${(props) => props.theme.colors.highlight1}; */
   width: 420px;
   max-width: 100%;
   min-height: 100vh;

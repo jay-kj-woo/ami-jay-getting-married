@@ -4,9 +4,11 @@ const LandingBlock = () => {
   return (
     <LandingBackground>
       <TitleBlock>
-        <span>THE MARRIAGE</span>
-        <h1>07.23</h1>
-        <p>우경제, 우아미 결혼합니다.</p>
+        <span>THE NEW BEGINNING</span>
+        <p>우경제</p>
+        <p>우아미</p>
+        {/* <h1>07.23</h1> */}
+        {/* <p>우경제, 우아미 결혼합니다.</p> */}
       </TitleBlock>
       <LandingFooterBlock>
         2022. 07. 23. 토요일 오후 04:00 <br />
@@ -26,12 +28,16 @@ const LandingBackground = styled.div`
   position: relative;
   outline: #e2e2e2 solid 1px;
   outline-offset: -10px;
+  * {
+    color: ${(props) => props.theme.colors.textBright};
+  }
 `;
 
 const TitleBlock = styled.div`
   padding: 30px 0;
   text-align: center;
   letter-spacing: -1px;
+
   span {
     font-weight: 400;
     font-size: 24px;

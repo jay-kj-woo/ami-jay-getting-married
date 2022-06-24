@@ -29,6 +29,8 @@ const BouncingUpContainer: FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-const Container = styled(motion.div)``;
+const Container = styled(motion.div)`
+  width: 100%;
+`;
 
 export { BouncingUpContainer, bounceUpVariants };
