@@ -8,7 +8,7 @@ const Finale = () => {
       <WaveContainer reverse>
         <WaveSVG />
       </WaveContainer>
-      <Image src={finale} />
+      <Image src={finale} priority />
       <WaveContainer>
         <WaveSVG />
       </WaveContainer>
