@@ -1,3 +1,4 @@
+import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Calender from './Calender';
@@ -6,6 +7,7 @@ import InvitationBlock from './InvitationBlock';
 import LandingBlock from './LandingBlock';
 import Location from './Location';
 import Map from './Map';
+import Photos from './Photos';
 import SwipePhotos from './SwipePhotos';
 import WaveSVG from './WaveSVG';
 
@@ -18,19 +20,23 @@ const MainContent = () => {
   const onShowFullPhoto = () => {
     setShowFullPhoto(true);
   };
+
   return (
     <Wrapper>
       <LandingBlock />
 
       {/* <WaveSVG /> */}
+      {/* <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        // viewport={{ once: true, amount: 0.8 }}
+      > */}
       <InvitationBlock />
-      <div>메인 컨텐트</div>
-      <div>컴퍼넌트</div>
-      <button onClick={onShowFullPhoto}> 포토 보기</button>
-      {showFullPhoto && <SwipePhotos setShowFullPhoto={setShowFullPhoto} />}
+      <Photos />
       <Calender />
       <Location />
       <Gratitude />
+      {/* </motion.div> */}
       <Spacer>스페이서</Spacer>
     </Wrapper>
   );

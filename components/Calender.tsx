@@ -1,80 +1,89 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import {
+  bounceUpVariants,
+  BouncingUpContainer,
+} from './motionDiv/BouncingUpContainer';
 
 const Calender = () => {
   return (
     <Wrapper>
-      <Title>7월</Title>
-      <Table>
-        <StyledHead>
-          <tr>
-            <StyledTH>SUN</StyledTH>
-            <StyledTH>MON</StyledTH>
-            <StyledTH>TUE</StyledTH>
-            <StyledTH>WED</StyledTH>
-            <StyledTH>THU</StyledTH>
-            <StyledTH>FRI</StyledTH>
-            <StyledTH>SAT</StyledTH>
-          </tr>
-        </StyledHead>
-        <StyledBody>
-          <tr>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD>1</StyledTD>
-            <StyledTD>2</StyledTD>
-          </tr>
-          <tr>
-            <StyledTD>3</StyledTD>
-            <StyledTD>4</StyledTD>
-            <StyledTD>5</StyledTD>
-            <StyledTD>6</StyledTD>
-            <StyledTD>7</StyledTD>
-            <StyledTD>8</StyledTD>
-            <StyledTD>9</StyledTD>
-          </tr>
-          <tr>
-            <StyledTD>10</StyledTD>
-            <StyledTD>11</StyledTD>
-            <StyledTD>12</StyledTD>
-            <StyledTD>13</StyledTD>
-            <StyledTD>14</StyledTD>
-            <StyledTD>15</StyledTD>
-            <StyledTD>16</StyledTD>
-          </tr>
-          <tr>
-            <StyledTD>17</StyledTD>
-            <StyledTD>18</StyledTD>
-            <StyledTD>19</StyledTD>
-            <StyledTD>20</StyledTD>
-            <StyledTD>21</StyledTD>
-            <StyledTD>22</StyledTD>
-            <StyledTD>
-              <Dday>23</Dday>
-            </StyledTD>
-          </tr>
-          <tr>
-            <StyledTD>24</StyledTD>
-            <StyledTD>25</StyledTD>
-            <StyledTD>26</StyledTD>
-            <StyledTD>27</StyledTD>
-            <StyledTD>28</StyledTD>
-            <StyledTD>29</StyledTD>
-            <StyledTD>30</StyledTD>
-          </tr>
-          <tr>
-            <StyledTD>31</StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-            <StyledTD></StyledTD>
-          </tr>
-        </StyledBody>
-      </Table>
+      <BouncingUpContainer>
+        <MotionDiv variants={bounceUpVariants}>
+          <Title>7월</Title>
+          <Table>
+            <StyledHead>
+              <tr>
+                <StyledTH>SUN</StyledTH>
+                <StyledTH>MON</StyledTH>
+                <StyledTH>TUE</StyledTH>
+                <StyledTH>WED</StyledTH>
+                <StyledTH>THU</StyledTH>
+                <StyledTH>FRI</StyledTH>
+                <StyledTH>SAT</StyledTH>
+              </tr>
+            </StyledHead>
+            <StyledBody>
+              <tr>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD>1</StyledTD>
+                <StyledTD>2</StyledTD>
+              </tr>
+              <tr>
+                <StyledTD>3</StyledTD>
+                <StyledTD>4</StyledTD>
+                <StyledTD>5</StyledTD>
+                <StyledTD>6</StyledTD>
+                <StyledTD>7</StyledTD>
+                <StyledTD>8</StyledTD>
+                <StyledTD>9</StyledTD>
+              </tr>
+              <tr>
+                <StyledTD>10</StyledTD>
+                <StyledTD>11</StyledTD>
+                <StyledTD>12</StyledTD>
+                <StyledTD>13</StyledTD>
+                <StyledTD>14</StyledTD>
+                <StyledTD>15</StyledTD>
+                <StyledTD>16</StyledTD>
+              </tr>
+              <tr>
+                <StyledTD>17</StyledTD>
+                <StyledTD>18</StyledTD>
+                <StyledTD>19</StyledTD>
+                <StyledTD>20</StyledTD>
+                <StyledTD>21</StyledTD>
+                <StyledTD>22</StyledTD>
+                <StyledTD>
+                  <Dday>23</Dday>
+                </StyledTD>
+              </tr>
+              <tr>
+                <StyledTD>24</StyledTD>
+                <StyledTD>25</StyledTD>
+                <StyledTD>26</StyledTD>
+                <StyledTD>27</StyledTD>
+                <StyledTD>28</StyledTD>
+                <StyledTD>29</StyledTD>
+                <StyledTD>30</StyledTD>
+              </tr>
+              <tr>
+                <StyledTD>31</StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+                <StyledTD></StyledTD>
+              </tr>
+            </StyledBody>
+          </Table>
+        </MotionDiv>
+      </BouncingUpContainer>
     </Wrapper>
   );
 };
@@ -88,6 +97,12 @@ const Wrapper = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 300px;
+`;
+
+const MotionDiv = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.div`
