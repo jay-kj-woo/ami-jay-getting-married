@@ -7,6 +7,8 @@ import {
 } from 'styled-components';
 import { Reset } from 'styled-reset';
 import Script from 'next/script';
+import { useEffect } from 'react';
+import Head from 'next/head';
 const GlobalStyle = createGlobalStyle`
  *, body {
   /* font-family: 'Nanum Pen Script', cursive; */
@@ -44,8 +46,19 @@ const myTheme: DefaultTheme = {
 };
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }, []);
+
   return (
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+      </Head>
       <Reset />
       <GlobalStyle />
       <ThemeProvider theme={myTheme}>

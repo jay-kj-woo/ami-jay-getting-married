@@ -45,7 +45,7 @@ const MobileContentWrapper = styled.div`
   /* color: ${(props) => props.theme.colors.highlight1}; */
   width: 420px;
   max-width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
 `;
@@ -54,7 +54,7 @@ const MotionDiv = styled(motion.div)`
   position: fixed;
   width: 100%;
   max-width: 420px;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 2000;
 `;
 export default Home;

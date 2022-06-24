@@ -17,6 +17,10 @@ const Map = () => {
       const mapOptions = {
         center: new kakao.maps.LatLng(37.47410639103727, 127.11513070583904),
         level: 6,
+        draggable: false,
+        scrollwheel: false,
+        disableDoubleClick: true,
+        disableDoubleClickZoom: true,
       };
 
       const map = new kakao.maps.Map(mapRef.current, mapOptions);
