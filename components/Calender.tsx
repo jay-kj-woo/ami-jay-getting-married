@@ -6,6 +6,14 @@ import {
 } from './motionDiv/BouncingUpContainer';
 
 const Calender = () => {
+  const date = [
+    ['', '', '', '', '', 1, 2],
+    [3, 4, 5, 6, 7, 8, 9],
+    [10, 11, 12, 13, 14, 15, 16],
+    [17, 18, 19, 20, 21, 22, 23],
+    [24, 25, 26, 27, 28, 29, 30],
+    [31, '', '', '', '', ''],
+  ];
   return (
     <Wrapper>
       <BouncingUpContainer>
@@ -14,72 +22,31 @@ const Calender = () => {
           <Table>
             <StyledHead>
               <tr>
-                <StyledTH>SUN</StyledTH>
+                <StyledTH sun>SUN</StyledTH>
                 <StyledTH>MON</StyledTH>
                 <StyledTH>TUE</StyledTH>
                 <StyledTH>WED</StyledTH>
                 <StyledTH>THU</StyledTH>
                 <StyledTH>FRI</StyledTH>
-                <StyledTH>SAT</StyledTH>
+                <StyledTH sat>SAT</StyledTH>
               </tr>
             </StyledHead>
             <StyledBody>
-              <tr>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD>1</StyledTD>
-                <StyledTD>2</StyledTD>
-              </tr>
-              <tr>
-                <StyledTD>3</StyledTD>
-                <StyledTD>4</StyledTD>
-                <StyledTD>5</StyledTD>
-                <StyledTD>6</StyledTD>
-                <StyledTD>7</StyledTD>
-                <StyledTD>8</StyledTD>
-                <StyledTD>9</StyledTD>
-              </tr>
-              <tr>
-                <StyledTD>10</StyledTD>
-                <StyledTD>11</StyledTD>
-                <StyledTD>12</StyledTD>
-                <StyledTD>13</StyledTD>
-                <StyledTD>14</StyledTD>
-                <StyledTD>15</StyledTD>
-                <StyledTD>16</StyledTD>
-              </tr>
-              <tr>
-                <StyledTD>17</StyledTD>
-                <StyledTD>18</StyledTD>
-                <StyledTD>19</StyledTD>
-                <StyledTD>20</StyledTD>
-                <StyledTD>21</StyledTD>
-                <StyledTD>22</StyledTD>
-                <StyledTD>
-                  <Dday>23</Dday>
-                </StyledTD>
-              </tr>
-              <tr>
-                <StyledTD>24</StyledTD>
-                <StyledTD>25</StyledTD>
-                <StyledTD>26</StyledTD>
-                <StyledTD>27</StyledTD>
-                <StyledTD>28</StyledTD>
-                <StyledTD>29</StyledTD>
-                <StyledTD>30</StyledTD>
-              </tr>
-              <tr>
-                <StyledTD>31</StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-                <StyledTD></StyledTD>
-              </tr>
+              {date.map((week, index) => (
+                <tr key={`week${index}`}>
+                  {week.map((day, index) => {
+                    if (index === 0) return <StyledTD sun>{day}</StyledTD>;
+                    else if (day === 23)
+                      return (
+                        <StyledTD>
+                          <Dday>{day}</Dday>
+                        </StyledTD>
+                      );
+                    else if (index === 6) return <StyledTD sat>{day}</StyledTD>;
+                    return <StyledTD key={`day${index}`}>{day}</StyledTD>;
+                  })}
+                </tr>
+              ))}
             </StyledBody>
           </Table>
         </MotionDiv>
@@ -96,7 +63,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  width: 300px;
+  width: 280px;
 `;
 
 const MotionDiv = styled(motion.div)`
@@ -106,11 +73,13 @@ const MotionDiv = styled(motion.div)`
 `;
 
 const Title = styled.div`
-  margin-bottom: 12px;
+  margin-bottom: 24px;
+  font-size: 18px;
 `;
 
 const Table = styled.table`
   width: 100%;
+  font-weight: 400;
 `;
 
 const StyledHead = styled.thead``;
@@ -118,27 +87,33 @@ const StyledHead = styled.thead``;
 const StyledBody = styled.tbody``;
 
 const StyledTR = styled.tr``;
-const StyledTH = styled.th`
-  padding: 6px;
+const StyledTH = styled.th<{ sat?: boolean; sun?: boolean }>`
+  /* padding: 6px; */
+  width: 14.28%;
+  height: 34px;
+  vertical-align: middle;
+  color: ${(props) => props.sat && props.theme.colors.blue1};
+  color: ${(props) => props.sun && props.theme.colors.red1};
 `;
-const StyledTD = styled.td`
+const StyledTD = styled.td<{ sat?: boolean; sun?: boolean }>`
   text-align: center;
-  width: 14%;
-  height: 20px;
+  width: 14.28%;
+  height: 34px;
+  vertical-align: middle;
+  color: ${(props) => props.sat && props.theme.colors.blue1};
+  color: ${(props) => props.sun && props.theme.colors.red1};
   /* padding: 6px; */
 `;
 
 const Dday = styled.div`
   color: #fff;
   position: relative;
-  /* z-index: 1000; */
-  /* &:before {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    background: #004a23;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-  } */
+  border-radius: 50%;
+  background: ${(props) => props.theme.colors.highlight2};
+  margin: auto auto;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
