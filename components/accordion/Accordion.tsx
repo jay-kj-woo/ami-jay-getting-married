@@ -1,8 +1,7 @@
 import { ChevronDown } from '@styled-icons/heroicons-outline';
-import { FC, FunctionComponent, ReactNode, useState } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { AccordionProvider, useAccordionContext } from './AccordionContext';
-import kakaoPayIcon from '../../public/icons/kakao_pay_icon.png';
 interface Children {
   children: ReactNode | ReactNode[];
 }
@@ -62,7 +61,9 @@ const Item: FC<{ accountNumber: string; name: string; kakaoQR: string }> = ({
       </Name>
       <AccountNumber>
         {accountNumber}
-        <KakaoPayButton href={`https://qr.kakaopay.com/${kakaoQR}`} />
+        {kakaoQR && (
+          <KakaoPayButton href={`https://qr.kakaopay.com/${kakaoQR}`} />
+        )}
       </AccountNumber>
     </AccordionItem>
   );

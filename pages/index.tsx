@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { NextPage } from 'next';
 import { useState } from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
 import styled from 'styled-components';
 import InitialLoadingContent from '../components/InitialLoadingContent';
 import MainContent from '../components/MainContent';
@@ -18,7 +21,9 @@ const Home: NextPage = () => {
               transition={{ duration: 2 }}
               exit={{ opacity: 0 }}
             >
-              <InitialLoadingContent setIsLoading={setIsLoading} />
+              <DndProvider backend={TouchBackend}>
+                <InitialLoadingContent setIsLoading={setIsLoading} />
+              </DndProvider>
             </MotionDiv>
           )}
         </AnimatePresence>

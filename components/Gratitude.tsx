@@ -24,14 +24,14 @@ const Gratitude = () => {
                 kakaoQR="FQxT02UbL"
               />
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="하나은행 60501123100108"
                 name="우종광"
-                kakaoQR="FQxT02UbL"
+                kakaoQR=""
               />
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="신한은행 110281234418"
                 name="소인숙"
-                kakaoQR="FQxT02UbL"
+                kakaoQR="FV0ieJnsK"
               />
             </Accordion.List>
           </Accordion>
@@ -39,19 +39,19 @@ const Gratitude = () => {
             <Accordion.Header>신부측 계좌번호</Accordion.Header>
             <Accordion.List>
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="토스뱅크 100015355835"
                 name="우아미"
                 kakaoQR="FQxT02UbL"
               />
               <Accordion.Item
                 accountNumber="110278912568"
                 name="우정욱"
-                kakaoQR="FQxT02UbL"
+                kakaoQR="FYUVyq2Eu"
               />
               <Accordion.Item
                 accountNumber="110278912568"
                 name="김미영"
-                kakaoQR="FQxT02UbL"
+                kakaoQR=""
               />
             </Accordion.List>
           </Accordion>

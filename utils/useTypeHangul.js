@@ -137,7 +137,6 @@ const useTypeHangul = (resultText, typingInterval = 150) => {
           const jmax = typing[i].length;
           // resultDiv.dangerouslySetInnerHTML = text + typing[i][j];
           setInnerText(text + typing[i][j]);
-          console.log(text + typing[i][j]);
           j++;
           if (j === jmax) {
             //   console.log(i);

@@ -1,16 +1,50 @@
-import { FC, ReactNode } from 'react';
+// import { Heart } from '@styled-icons/heroicons-solid';
+import { Heart } from '@styled-icons/foundation';
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
+interface DropProps {
+  canDrop: boolean;
+  width: number;
+  height: number;
+  numDrops: number;
+}
 
-const DropZone = ({ children }: { children?: ReactNode }) => {
-  return <StyledDiv>{children}</StyledDiv>;
+const heartVariants = {
+  zero: { scale: 1 },
+  one: { scale: 1.2 },
+  two: { scale: 1.5 },
+};
+const DropZone = ({ canDrop, width, height, numDrops }: DropProps) => {
+  return (
+    <MotionDiv
+      width={width}
+      height={height}
+      initial={{ scale: 1 }}
+      variants={heartVariants}
+      animate={!numDrops ? 'zero' : numDrops === 1 ? 'one' : 'two'}
+      //   animate={{ scale: 1.5 }}
+    >
+      <StyledHeart
+        canDrop={canDrop}
+        width={width}
+        height={height}
+      ></StyledHeart>
+    </MotionDiv>
+  );
 };
 
 export default DropZone;
-const StyledDiv = styled.div`
-  width: 100px;
-  height: 100px;
+const MotionDiv = styled(motion.div)<DropProps>`
+  width: ${(props) => `${props.width}px`};
+  height: ${(props) => `${props.height}px`};
+`;
+const StyledHeart = styled(Heart)<Omit<DropProps, 'numDrops'>>`
+  position: absolute;
+  width: ${(props) => `${props.width}px`};
+  height: ${(props) => `${props.height}px`};
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.highlight3};
+  fill: ${(props) => props.theme.colors.highlight3};
+  /* border: ${(props) => props.canDrop && '1px solid red'}; */
 `;

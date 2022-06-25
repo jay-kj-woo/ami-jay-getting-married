@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import { useDrag } from 'react-dnd';
 import { getEmptyImage } from 'react-dnd-html5-backend';
 import styled from 'styled-components';
-import groom from '../../public/icons/groom.png';
+import bride from '../../public/icons/bride.png';
 import { DragItem } from '../InitialLoadingContent';
 
-const Groom = ({ title, left, top }: DragItem) => {
+const Bride = ({ title, left, top }: DragItem) => {
   const [{ isDragging }, drag, preview] = useDrag(
     () => ({
-      type: 'groom',
+      type: 'bride',
       item: { title, left, top },
       collect: (monitor) => ({
         isDragging: !!monitor.isDragging(),
@@ -17,19 +17,18 @@ const Groom = ({ title, left, top }: DragItem) => {
     }),
     [left, top]
   );
-
   useEffect(() => {
     preview(getEmptyImage(), { captureDraggingState: true });
   }, [preview]);
 
   return (
     <StyledDiv ref={drag} left={left} top={top} isDragging={isDragging}>
-      <Image src={groom} />
+      <Image src={bride} />
     </StyledDiv>
   );
 };
 
-export default Groom;
+export default Bride;
 
 const StyledDiv = styled.div<{
   left: number;

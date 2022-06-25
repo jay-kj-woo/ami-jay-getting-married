@@ -1,4 +1,3 @@
-import { Chat } from '@styled-icons/heroicons-outline';
 import { Mail, Phone } from '@styled-icons/heroicons-solid';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
@@ -37,24 +36,22 @@ const Contact = () => {
             </ContactBox>
           </Main>
           <Parents>
-            {/* <span>신랑측 혼주</span>
-        <span>신부측 혼주</span> */}
             <ContactBox isGroom>
               <strong>신랑측 혼주</strong> 아버지 우종광
               <IconContainer>
-                <a href="tel:01066458412">
+                <a href="tel:01024090900">
                   <PhoneIcon isGroom />
                 </a>
-                <a href="sms:01066458412">
+                <a href="sms:01024090900">
                   <SMSIcon />
                 </a>
               </IconContainer>
               어머니 소인숙
               <IconContainer>
-                <a href="tel:01066458412">
+                <a href="tel:01024772900">
                   <PhoneIcon isGroom />
                 </a>
-                <a href="sms:01066458412">
+                <a href="sms:01024772900">
                   <SMSIcon />
                 </a>
               </IconContainer>
