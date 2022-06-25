@@ -2,9 +2,20 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import styled from 'styled-components';
 import useTypeHangul from '../utils/useTypeHangul';
+import groom from '../public/icons/groom.png';
+import Image from 'next/image';
+import DropZone from './dragndrop/DropZone';
+import Groom from './dragndrop/Groom';
+import { DndProvider } from 'react-dnd';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 interface Props {
   setIsLoading: Dispatch<SetStateAction<boolean>>;
 }
+
+const DRAG_OPTIONS = {
+  enableMouseEvents: false,
+};
 
 const InitialLoadingContent = ({ setIsLoading }: Props) => {
   // const onSetLoadingComplete = () => {
@@ -15,15 +26,19 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
   const { innerText, isTypingComplete } = useTypeHangul(text, typingInterval);
   useEffect(() => {
     if (isTypingComplete) {
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   }, [isTypingComplete, setIsLoading]);
 
   return (
-    <Wrapper>
-      <TypingText>{innerText}</TypingText>
-      {/* <button onClick={onSetLoadingComplete}>로딩 종료 : 메인 화면 이동</button> */}
-    </Wrapper>
+    <DndProvider backend={HTML5Backend}>
+      <Wrapper>
+        <TypingText>{innerText}</TypingText>
+        <DropZone></DropZone>
+        <Groom />
+        {/* <button onClick={onSetLoadingComplete}>로딩 종료 : 메인 화면 이동</button> */}
+      </Wrapper>
+    </DndProvider>
   );
 };
 
@@ -31,6 +46,7 @@ export default InitialLoadingContent;
 
 const Wrapper = styled.div`
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,6 +61,8 @@ const Wrapper = styled.div`
 `;
 
 const TypingText = styled.div`
+  position: absolute;
+  top: 20%;
   font-size: 20px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textBright};
