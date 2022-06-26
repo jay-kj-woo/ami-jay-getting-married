@@ -34,7 +34,7 @@ const DropZone = ({ canDrop, width, height, numDrops }: DropProps) => {
 };
 
 export default DropZone;
-const MotionDiv = styled(motion.div)<DropProps>`
+const MotionDiv = styled(motion.div)<Omit<DropProps, 'canDrop' | 'numDrops'>>`
   width: ${(props) => `${props.width}px`};
   height: ${(props) => `${props.height}px`};
 `;
