@@ -70,16 +70,18 @@ const Wrapper = styled.div`
 const SwiperContainer = styled(motion.div)`
   height: calc(var(--vh, 1vh) * 90);
   max-height: 750px;
+  margin-top: 40px;
 `;
 
 const SwiperMain = styled(Swiper)`
   height: 80%;
   padding-bottom: 16px;
+  --swiper-navigation-size: 24px;
   .swiper-button-prev {
-    color: #fff;
+    color: ${(props) => props.theme.colors.highlight2};
   }
   .swiper-button-next {
-    color: #fff;
+    color: ${(props) => props.theme.colors.highlight2};
   }
   .swiper-slide {
     display: flex;

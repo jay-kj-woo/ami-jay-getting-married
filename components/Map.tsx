@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { bounceUpVariants } from './motionDiv/BouncingUpContainer';
 
 declare global {
   interface Window {
@@ -32,7 +34,7 @@ const Map = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper variants={bounceUpVariants}>
       <Script
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=247677513437e93adfdda6da85ee9abf&libraries=drawing&autoload=false"
         onLoad={handleOnLoad}
@@ -58,7 +60,7 @@ const Map = () => {
 
 export default Map;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100%;

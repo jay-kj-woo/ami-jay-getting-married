@@ -19,7 +19,7 @@ const Gratitude = () => {
             <Accordion.Header>신랑측 계좌번호</Accordion.Header>
             <Accordion.List>
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="신한은행 110278912568"
                 name="우경제"
                 kakaoQR="FQxT02UbL"
               />
@@ -44,12 +44,12 @@ const Gratitude = () => {
                 kakaoQR="FQxT02UbL"
               />
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="기업은행 30500468503021"
                 name="우정욱"
                 kakaoQR="FYUVyq2Eu"
               />
               <Accordion.Item
-                accountNumber="110278912568"
+                accountNumber="기업은행 30500468503021"
                 name="김미영"
                 kakaoQR=""
               />
@@ -66,7 +66,7 @@ export default Gratitude;
 const Wrapper = styled.div`
   width: 100%;
   text-align: center;
-  margin: 100px 0 100px 0;
+  margin: 100px 0 60px 0;
 `;
 
 const MotionDiv = styled(motion.div)``;

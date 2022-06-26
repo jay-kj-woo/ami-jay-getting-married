@@ -27,23 +27,16 @@ const DROPZONE_SIZE = {
   width: 200,
   height: 200,
 };
+const TOLERANCE = 50;
 
 const InitialLoadingContent = ({ setIsLoading }: Props) => {
-  // const onSetLoadingComplete = () => {
-  //   setIsLoading(false);
-  // };
-  const text = '우경제 우아미 결혼합니다.';
-  const typingInterval = 120;
+  const text = '경제, 아미 결혼합니다.';
+  const typingInterval = 80;
   const { innerText, isTypingComplete } = useTypeHangul(text, typingInterval);
-  useEffect(() => {
-    if (isTypingComplete) {
-      // setIsLoading(false);
-    }
-  }, [isTypingComplete, setIsLoading]);
 
   const [itemLocations, setItemLocations] = useState({
-    groom: { top: 200, left: -100 },
-    bride: { top: 200, left: 100 },
+    groom: { top: 200, left: -100, inBound: false },
+    bride: { top: 200, left: 100, inBound: false },
   });
 
   const [isAllDropped, setIsAllDropped] = useState(false);
@@ -57,32 +50,48 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
   }, [isAllDropped]);
 
   const checkInBound = useCallback((left: number, top: number) => {
-    const isWidthInBound = Math.abs(left) < DROPZONE_SIZE.width / 2;
-    const isHeightInBound = Math.abs(top) < DROPZONE_SIZE.height / 2;
+    const isWidthInBound = Math.abs(left) < DROPZONE_SIZE.width / 2 - TOLERANCE;
+    const isHeightInBound =
+      Math.abs(top) < DROPZONE_SIZE.height / 2 - TOLERANCE;
     if (isHeightInBound && isWidthInBound) return true;
     return false;
   }, []);
 
   const getNewLocations = useCallback((title: 'groom' | 'bride') => {
     if (title === 'groom') {
-      return { newLeft: -20, newTop: 0 };
+      return { newLeft: -19, newTop: 0 };
     }
-    return { newLeft: 20, newTop: 0 };
+    return { newLeft: 19, newTop: -2 };
   }, []);
 
+  // useEffect(() => {
+  //   const { groom, bride } = itemLocations;
+  //   const isGroomInBound = checkInBound(groom.left, groom.top);
+  //   const isBrideInBound = checkInBound(bride.left, bride.top);
+  //   if (isGroomInBound && isBrideInBound) setIsAllDropped(true);
+  // }, [checkInBound, itemLocations]);
+
   useEffect(() => {
-    const { groom, bride } = itemLocations;
-    const isGroomInBound = checkInBound(groom.left, groom.top);
-    const isBrideInBound = checkInBound(bride.left, bride.top);
-    if (isGroomInBound && isBrideInBound) setIsAllDropped(true);
-  }, [checkInBound, itemLocations]);
+    if (numDrops === 2) setIsAllDropped(true);
+  }, [numDrops]);
 
   const moveBox = useCallback(
     (title: 'groom' | 'bride', left: number, top: number) => {
-      setItemLocations({ ...itemLocations, [title]: { top, left } });
+      setItemLocations((prevState) => ({
+        ...prevState,
+        [title]: { ...prevState[title], top, left },
+      }));
     },
-    [itemLocations]
+    []
   );
+
+  const skipDragIntro = () => {
+    const groomDestination = getNewLocations('groom');
+    const brideDestination = getNewLocations('bride');
+    moveBox('groom', groomDestination.newLeft, groomDestination.newTop);
+    moveBox('bride', brideDestination.newLeft, brideDestination.newTop);
+    setNumDrops(2);
+  };
 
   const [{ canDrop }, drop] = useDrop(
     () => ({
@@ -92,8 +101,6 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
           x: number;
           y: number;
         };
-        // console.log(item);
-        // console.log(delta);
         const left = Math.round(item.left + delta.x);
         const top = Math.round(item.top + delta.y);
         if (checkInBound(left, top)) {
@@ -122,7 +129,7 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
       {isTypingComplete && (
         <MotionDiv
           key={'DndContent'}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
@@ -143,10 +150,24 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
               left={itemLocations.bride.left}
               top={itemLocations.bride.top}
             />
+            <TutorialText>
+              아미와 경제를 <br />
+              하트 가운데에 올려주세요
+            </TutorialText>
           </DndWrapper>
         </MotionDiv>
       )}
-
+      {isTypingComplete && (
+        <SkipButton
+          key={'SkipButton'}
+          transition={{ delay: 1, duration: 1 }}
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          onClick={skipDragIntro}
+        >
+          바로 청첩장 보러 가기
+        </SkipButton>
+      )}
       <CustomDragLayer />
     </Wrapper>
   );
@@ -181,8 +202,8 @@ const DndWrapper = styled.div`
 
 const TypingText = styled.div`
   position: absolute;
-  top: 20%;
-  font-size: 20px;
+  top: 8%;
+  font-size: 22px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textBright};
 `;
@@ -190,4 +211,31 @@ const TypingText = styled.div`
 const MotionDiv = styled(motion.div)`
   width: 100%;
   height: 100%;
+`;
+
+const SkipButton = styled(motion.button)`
+  padding: 14px 24px;
+  width: fit-content;
+  /* height: 50px; */
+  position: absolute;
+  margin: 0 auto;
+  bottom: 3%;
+  border: 2px solid transparent;
+  border-radius: 32px;
+  box-shadow: 0 5px 15px -8px #000;
+  background-color: #f9f6f1;
+  font-size: 16px;
+  font-weight: 600;
+  color: #064420;
+`;
+
+const TutorialText = styled.div`
+  position: absolute;
+  margin: 0 auto;
+  width: fit-content;
+  transform: translateY(-150px);
+  color: ${(props) => props.theme.colors.textBright};
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
 `;

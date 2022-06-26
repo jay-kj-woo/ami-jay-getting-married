@@ -22,7 +22,9 @@ const Location = () => {
           02-543-2555
         </Text>
       </BouncingUpContainer>
-      <Map />
+      <BouncingUpContainer>
+        <Map />
+      </BouncingUpContainer>
       <BouncingUpContainer>
         <Text className="info" variants={bounceUpVariants}>
           <strong>대중교통 이용 시</strong>
@@ -64,12 +66,12 @@ export default Location;
 const Wrapper = styled.div`
   width: 100%;
   text-align: center;
-  margin: 100px 0 100px 0;
+  /* margin: 100px 0 100px 0; */
+  margin-top: 100px;
 `;
 
 const Text = styled(motion.div)`
   margin-top: 40px;
-  margin-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
   strong {

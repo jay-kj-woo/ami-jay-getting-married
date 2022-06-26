@@ -76,7 +76,7 @@ Accordion.Item = Item;
 const AccordionContainer = styled.div`
   width: 300px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 40px;
 
   display: flex;
   flex-direction: column;
@@ -84,7 +84,7 @@ const AccordionContainer = styled.div`
   border-radius: 6px;
   background: #fff;
   & + & {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 `;
 
@@ -113,7 +113,7 @@ const AccordionDownArrow = styled(ChevronDown)<{ isExpanded: boolean }>`
 `;
 
 const AccordionList = styled.div<{ isExpanded: boolean }>`
-  height: ${(props) => (props.isExpanded ? '219px' : '0')};
+  height: ${(props) => (props.isExpanded ? '225px' : '0')};
   transition: height 0.5s ease;
   overflow: hidden;
   display: flex;
@@ -126,6 +126,7 @@ const AccordionItem = styled.div`
   border-top: 1px solid #eee;
   display: flex;
   flex-direction: column;
+  font-size: 14px;
 `;
 
 const Name = styled.div`
@@ -136,19 +137,22 @@ const Name = styled.div`
 `;
 
 const AccountNumber = styled.div`
-  height: 30px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const ClipboardButton = styled.div`
-  background: #8f7f7f;
-  width: 60px;
-  height: 20px;
+  background: ${(props) => props.theme.colors.background};
+  width: 70px;
+  border-radius: 4px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
+  color: ${(props) => props.theme.colors.highlight2};
 `;
 
 const KakaoPayButton = styled.a`
@@ -157,12 +161,13 @@ const KakaoPayButton = styled.a`
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-color: #ffeb00;
-  width: 60px;
-  height: 20px;
+  width: 70px;
+  height: 24px;
   padding: 0 6px;
   display: flex;
   align-items: center;
   text-decoration: none;
+  border-radius: 4px;
 `;
 
 export default Accordion;

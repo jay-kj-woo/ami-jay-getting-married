@@ -4,11 +4,9 @@ const LandingBlock = () => {
   return (
     <LandingBackground>
       <TitleBlock>
-        <span>THE NEW BEGINNING</span>
+        <span>NEW BEGINNING</span>
         <p>우경제</p>
         <p>우아미</p>
-        {/* <h1>07.23</h1> */}
-        {/* <p>우경제, 우아미 결혼합니다.</p> */}
       </TitleBlock>
       <LandingFooterBlock>
         2022. 07. 23. 토요일 오후 04:00 <br />
@@ -21,7 +19,8 @@ const LandingBlock = () => {
 const LandingBackground = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
-  background-image: url('/images/landingBackground.jpg');
+  /* background-image: url('/images/landingBackground.jpg'); */
+  background-image: url('/images/main.jpg');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;

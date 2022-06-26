@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   /* color: #e2e2e2; */
   /* color:#164e45; */
   color: #585858;
-  font-size: 14px;
+  font-size: 16px;
  }
 
 `;
@@ -51,7 +51,10 @@ const myTheme: DefaultTheme = {
     highlight1: '#036253',
     highlight2: '#064420',
     highlight3: '#FDFAF6',
+    highlight4: '#548365',
+    highlight5: '#a4a29f',
     textBright: '#e2e2e2',
+
     textBox: '#E4EFE7',
     blue1: '#8CC0DE',
     red1: '#FFA1A1',
