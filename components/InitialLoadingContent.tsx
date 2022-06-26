@@ -44,7 +44,6 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
 
   useEffect(() => {
     if (isAllDropped) {
-      console.log('yay');
       setIsLoading(false);
     }
   }, [isAllDropped, setIsLoading]);
@@ -118,10 +117,13 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
             ...itemLocations,
             [item.title]: { ...itemLocations[item.title], inBound: false },
           });
-          setNumDrops((prev) => {
-            if (prev > 0) return prev - 1;
-            return 0;
-          });
+          if (itemLocations[item.title].inBound) {
+            setNumDrops((prev) => {
+              if (prev > 0) return prev - 1;
+              return 0;
+            });
+          }
+
           moveBox(item.title, left, top);
         }
         return undefined;
