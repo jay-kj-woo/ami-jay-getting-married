@@ -35,7 +35,7 @@ const Photos = () => {
             {imageList.map((image) => (
               <SwiperSlide key={image.src}>
                 {/*might just use regular Img tag since, next/image is not loaed out of viewport  */}
-                <Image src={image} objectFit="contain" priority />
+                <Image src={image} objectFit="contain" priority alt="" />
               </SwiperSlide>
             ))}
           </SwiperMain>
@@ -50,7 +50,7 @@ const Photos = () => {
           >
             {imageList.map((image) => (
               <SwiperSlide key={image.src}>
-                <Image src={image} objectFit="cover" priority />
+                <Image src={image} objectFit="cover" priority alt="" />
               </SwiperSlide>
             ))}
           </ThumbSlider>

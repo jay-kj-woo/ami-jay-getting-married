@@ -24,7 +24,7 @@ const Groom = ({ title, left, top }: DragItem) => {
 
   return (
     <StyledDiv ref={drag} left={left} top={top} isDragging={isDragging}>
-      <Image src={groom} />
+      <Image src={groom} alt="" />
     </StyledDiv>
   );
 };

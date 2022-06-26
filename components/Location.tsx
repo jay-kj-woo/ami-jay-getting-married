@@ -27,14 +27,23 @@ const Location = () => {
       </BouncingUpContainer>
       <BouncingUpContainer>
         <Text className="info" variants={bounceUpVariants}>
-          <strong>대중교통 이용 시</strong>
+          <strong>지하철 이용 시</strong>
           <br />
-          지하철 7호선 또는 3호선 수서역 <br />
+          7호선 또는 3호선 수서역 <br />
           4번 출구 계단 이용 후 약 50m 직진
           <br />
           횡단보도가 나오면 왼쪽 약국을 감싸며 좌회전
           <br />
-          50m앞 기아오토큐 맞은편에서 셔틀버스 탑승
+          50m 앞 기아오토큐 맞은편에서 셔틀버스 탑승
+          <br />
+          <br />
+          <strong> 기차 이용 시</strong>
+          <br />
+          SRT고속철도 수서역 1번 출구 하차
+          <br />
+          도보 1분 거리 기아오토큐 맞은편
+          <br />
+          셔틀버스 탑승장에서 셔틀버스 이용
           <br />
           <br />
           <strong>자기차량 이용 시</strong>
@@ -44,17 +53,14 @@ const Location = () => {
           (주차 2시간 무료)
           <br />
           <br />
-          <strong> 기차 이용 시</strong>
-          <br />
-          SRT고속철도 수서역 1번 출구 하차
-          <br />
-          도보 30초 거리 셔틀버스 탑승장에서 셔틀버스 이용
-          <strong></strong>
-          <br />
-          <br />
           <strong>대전 셔틀버스 이용 시</strong>
           <br />
-          여기저기서 3시에 탐
+          타는 곳 : 평송수련원 주차장
+          <br />
+          대전 출발: 오후 12시 30분 <br />
+          예식장 출발: 오후 5시30분
+          {/* <br /> */}
+          {/* 인솔자: 우성호 */}
         </Text>
       </BouncingUpContainer>
     </Wrapper>
@@ -66,7 +72,6 @@ export default Location;
 const Wrapper = styled.div`
   width: 100%;
   text-align: center;
-  /* margin: 100px 0 100px 0; */
   margin-top: 100px;
 `;
 

@@ -70,6 +70,15 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <title>아미&경제 웨딩</title>
+        <meta property="og:url" content="your url" />
+        <meta property="og:type" content="https://wedding-invitation-two.vercel.app" />
+        <meta property="og:title" content="경제와 아미 결혼" />
+        <meta
+          property="og:description"
+          content="저희 결혼합니다!! 07월 23일 빌라디지디 수서에서 봬어요 😍"
+        />
+        <meta property="og:image" content={'https://wedding-invitation-two.vercel.app/images/og.jpg'}>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"

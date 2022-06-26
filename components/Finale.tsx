@@ -8,7 +8,16 @@ const Finale = () => {
       <WaveContainer reverse>
         <WaveSVG />
       </WaveContainer>
-      <Image src={finale} priority />
+      <Image
+        src={finale}
+        priority
+        alt=""
+        style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+      />
+      <TextBlock>
+        감사합니다. 행복하게 살겠습니다.
+        <br />- 아미 & 경제 -
+      </TextBlock>
       <WaveContainer>
         <WaveSVG />
       </WaveContainer>
@@ -38,4 +47,15 @@ const WaveContainer = styled.div<{ reverse?: boolean }>`
       : css`
           bottom: 0;
         `}
+`;
+
+const TextBlock = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 30px;
+  font-weight: 400;
+  color: #fff;
+  text-align: end;
+  line-height: 1.5;
+  font-size: 16px;
 `;

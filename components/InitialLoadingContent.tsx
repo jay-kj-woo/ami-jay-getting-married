@@ -47,7 +47,7 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
       console.log('yay');
       setIsLoading(false);
     }
-  }, [isAllDropped]);
+  }, [isAllDropped, setIsLoading]);
 
   const checkInBound = useCallback((left: number, top: number) => {
     const isWidthInBound = Math.abs(left) < DROPZONE_SIZE.width / 2 - TOLERANCE;

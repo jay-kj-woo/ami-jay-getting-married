@@ -4,9 +4,8 @@ const LandingBlock = () => {
   return (
     <LandingBackground>
       <TitleBlock>
-        <span>NEW BEGINNING</span>
-        <p>우경제</p>
-        <p>우아미</p>
+        <h1>NEW BEGINNING</h1>
+        <span>우경제 & 우아미</span>
       </TitleBlock>
       <LandingFooterBlock>
         2022. 07. 23. 토요일 오후 04:00 <br />
@@ -19,7 +18,6 @@ const LandingBlock = () => {
 const LandingBackground = styled.div`
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
-  /* background-image: url('/images/landingBackground.jpg'); */
   background-image: url('/images/main.jpg');
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -33,7 +31,7 @@ const LandingBackground = styled.div`
 `;
 
 const TitleBlock = styled.div`
-  padding: 30px 0;
+  padding: 40px 0;
   text-align: center;
   letter-spacing: -1px;
 
@@ -42,11 +40,9 @@ const TitleBlock = styled.div`
     font-size: 24px;
   }
   h1 {
-    font-size: 80px;
-    margin-bottom: 20px;
-  }
-  p {
     font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 600;
   }
 `;
 const LandingFooterBlock = styled.div`
@@ -55,6 +51,7 @@ const LandingFooterBlock = styled.div`
   bottom: 20px;
   padding: 20px 0;
   text-align: center;
+  line-height: 1.5;
 `;
 
 export default LandingBlock;
