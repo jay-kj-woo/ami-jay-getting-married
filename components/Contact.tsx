@@ -26,10 +26,10 @@ const Contact = () => {
             <ContactBox>
               신부에게 연락하기
               <IconContainer>
-                <a href="tel:01066458412">
+                <a href="tel:01026253384">
                   <PhoneIcon />
                 </a>
-                <a href="sms:01066458412">
+                <a href="sms:01026253384">
                   <SMSIcon />
                 </a>
               </IconContainer>
@@ -59,19 +59,19 @@ const Contact = () => {
             <ContactBox>
               <strong>신부측 혼주</strong> 아버지 우정욱
               <IconContainer>
-                <a href="tel:01066458412">
+                <a href="tel:01082642838">
                   <PhoneIcon />
                 </a>
-                <a href="sms:01066458412">
+                <a href="sms:01082642838">
                   <SMSIcon />
                 </a>
               </IconContainer>
               어머니 김미영
               <IconContainer>
-                <a href="tel:01066458412">
+                <a href="tel:01082642838">
                   <PhoneIcon />
                 </a>
-                <a href="sms:01066458412">
+                <a href="sms:01082642838">
                   <SMSIcon />
                 </a>
               </IconContainer>
