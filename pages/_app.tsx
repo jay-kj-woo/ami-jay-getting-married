@@ -74,7 +74,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="your url" />
         <meta
           property="og:type"
-          content="https://wedding-invitation-two.vercel.app"
+          content="https://ami-jay-getting-married.vercel.app"
         />
         <meta property="og:title" content="경제와 아미 결혼" />
         <meta
@@ -83,7 +83,7 @@ function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content={'https://wedding-invitation-two.vercel.app/images/og.jpg'}
+          content={'https://ami-jay-getting-married.vercel.app/images/og.jpg'}
         />
         <meta
           name="viewport"
