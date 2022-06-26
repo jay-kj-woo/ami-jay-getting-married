@@ -11,8 +11,8 @@ interface DropProps {
 
 const heartVariants = {
   zero: { scale: 1 },
-  one: { scale: 1.2 },
-  two: { scale: 1.5 },
+  one: { scale: 1.3 },
+  two: { scale: 2 },
 };
 const DropZone = ({ canDrop, width, height, numDrops }: DropProps) => {
   return (

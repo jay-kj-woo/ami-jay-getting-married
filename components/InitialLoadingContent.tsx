@@ -105,9 +105,19 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
         const top = Math.round(item.top + delta.y);
         if (checkInBound(left, top)) {
           const { newLeft, newTop } = getNewLocations(item.title);
-          setNumDrops((prev) => prev + 1);
+          setItemLocations({
+            ...itemLocations,
+            [item.title]: { ...itemLocations[item.title], inBound: true },
+          });
+          if (!itemLocations[item.title].inBound) {
+            setNumDrops((prev) => prev + 1);
+          }
           moveBox(item.title, newLeft, newTop);
         } else {
+          setItemLocations({
+            ...itemLocations,
+            [item.title]: { ...itemLocations[item.title], inBound: false },
+          });
           setNumDrops((prev) => {
             if (prev > 0) return prev - 1;
             return 0;
@@ -120,7 +130,7 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
         canDrop: monitor.canDrop(),
       }),
     }),
-    [moveBox]
+    [moveBox, itemLocations]
   );
 
   return (

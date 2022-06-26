@@ -35,14 +35,24 @@ const Calender = () => {
               {date.map((week, index) => (
                 <tr key={`week${index}`}>
                   {week.map((day, index) => {
-                    if (index === 0) return <StyledTD sun>{day}</StyledTD>;
+                    if (index === 0)
+                      return (
+                        <StyledTD key={`day${index}`} sun>
+                          {day}
+                        </StyledTD>
+                      );
                     else if (day === 23)
                       return (
-                        <StyledTD>
+                        <StyledTD key={`day${index}`}>
                           <Dday>{day}</Dday>
                         </StyledTD>
                       );
-                    else if (index === 6) return <StyledTD sat>{day}</StyledTD>;
+                    else if (index === 6)
+                      return (
+                        <StyledTD key={`day${index}`} sat>
+                          {day}
+                        </StyledTD>
+                      );
                     return <StyledTD key={`day${index}`}>{day}</StyledTD>;
                   })}
                 </tr>

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
           {isLoading && (
             <MotionDiv
               key={'initialLoadingContent'}
-              transition={{ duration: 2 }}
+              transition={{ duration: 2, delay: 1 }}
               exit={{ opacity: 0 }}
             >
               <DndProvider backend={TouchBackend}>
