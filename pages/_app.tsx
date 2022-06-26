@@ -9,6 +9,7 @@ import { Reset } from 'styled-reset';
 import Script from 'next/script';
 import { useEffect } from 'react';
 import Head from 'next/head';
+
 const GlobalStyle = createGlobalStyle`
  *, body {
   /* font-family: 'Nanum Pen Script', cursive; */

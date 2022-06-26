@@ -27,7 +27,7 @@ const DROPZONE_SIZE = {
   width: 200,
   height: 200,
 };
-const TOLERANCE = 50;
+const TOLERANCE = 20;
 
 const InitialLoadingContent = ({ setIsLoading }: Props) => {
   const text = '경제, 아미 결혼합니다.';
