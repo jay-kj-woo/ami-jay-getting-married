@@ -10,9 +10,9 @@ import MainContent from '../components/MainContent';
 
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const isTouchEnabled = () => {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  };
+  // const isTouchEnabled = () => {
+  //   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  // };
   // const isScreenTallerThanMobile =() => {
   // return window.innerHeight > 1000;
   // // }
@@ -32,9 +32,7 @@ const Home: NextPage = () => {
               transition={{ duration: 2, delay: 1 }}
               exit={{ opacity: 0 }}
             >
-              <DndProvider
-                backend={isTouchEnabled() ? TouchBackend : HTML5Backend}
-              >
+              <DndProvider backend={TouchBackend}>
                 <InitialLoadingContent setIsLoading={setIsLoading} />
               </DndProvider>
             </MotionDiv>
