@@ -19,8 +19,8 @@ const MainContent = () => {
       <Calender />
       <Video />
       <Location />
+      {/* <Contact /> */}
       <Gratitude />
-      <Contact />
       <Finale />
       <Copyright />
     </Wrapper>
