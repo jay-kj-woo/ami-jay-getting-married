@@ -29,7 +29,7 @@ const Location = () => {
         <Text className="info" variants={bounceUpVariants}>
           <strong>지하철 이용 시</strong>
           <br />
-          7호선 또는 3호선 수서역 <br />
+          수인분당선 또는 3호선 수서역 <br />
           4번 출구 계단 이용 후 약 50m 직진
           <br />
           횡단보도가 나오면 왼쪽 약국을 감싸며 좌회전

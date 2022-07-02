@@ -10,6 +10,7 @@ import MainContent from '../components/MainContent';
 
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true);
+<<<<<<< HEAD
   const [isTouchDevice, setIsTouchDevice] = useState(true);
   const isTouchEnabled = () => {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -17,6 +18,11 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (!isTouchEnabled()) setIsTouchDevice(false);
   }, []);
+=======
+  // const isTouchEnabled = () => {
+  //   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  // };
+>>>>>>> main
   // const isScreenTallerThanMobile =() => {
   // return window.innerHeight > 1000;
   // // }
@@ -36,9 +42,13 @@ const Home: NextPage = () => {
               transition={{ duration: 2, delay: 1 }}
               exit={{ opacity: 0 }}
             >
+<<<<<<< HEAD
               <DndProvider
                 backend={isTouchDevice ? TouchBackend : HTML5Backend}
               >
+=======
+              <DndProvider backend={TouchBackend}>
+>>>>>>> main
                 <InitialLoadingContent setIsLoading={setIsLoading} />
               </DndProvider>
             </MotionDiv>
