@@ -146,6 +146,11 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
           animate={{ opacity: 1 }}
         >
           <DndWrapper ref={drop}>
+            <TutorialText>
+              아미와 경제를 <br />
+              하트 가운데에 올려주세요
+            </TutorialText>
+
             <DropZone
               numDrops={numDrops}
               canDrop={canDrop}
@@ -162,10 +167,6 @@ const InitialLoadingContent = ({ setIsLoading }: Props) => {
               left={itemLocations.bride.left}
               top={itemLocations.bride.top}
             />
-            <TutorialText>
-              아미와 경제를 <br />
-              하트 가운데에 올려주세요
-            </TutorialText>
           </DndWrapper>
         </MotionDiv>
       )}
@@ -189,6 +190,8 @@ export default InitialLoadingContent;
 
 const Wrapper = styled.div`
   height: 100%;
+  width: 100%;
+  max-height: 950px;
   position: relative;
   display: flex;
   flex-direction: column;

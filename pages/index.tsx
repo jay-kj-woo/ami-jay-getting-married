@@ -57,7 +57,7 @@ const SiteWrapper = styled.div`
 const MobileContentWrapper = styled.div`
   position: relative;
   /* background-color: #548365; */
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.highlight4};
   /* color: ${(props) => props.theme.colors.highlight1}; */
   width: 420px;
   max-width: 100%;
@@ -72,5 +72,8 @@ const MotionDiv = styled(motion.div)`
   max-width: 420px;
   height: calc(var(--vh, 1vh) * 100);
   z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default Home;
