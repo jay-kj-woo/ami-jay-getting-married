@@ -34,4 +34,5 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: ${(props) => props.theme.colors.background};
 `;
