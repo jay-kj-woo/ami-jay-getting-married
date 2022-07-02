@@ -91,6 +91,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 300px;
+  margin-top: 40px;
 `;
 const MotionDiv = styled(motion.div)`
   width: 100%;

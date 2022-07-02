@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Accordion from './accordion/Accordion';
+import Contact from './Contact';
 import {
   bounceUpVariants,
   BouncingUpContainer,
@@ -13,6 +14,7 @@ const Gratitude = () => {
       <BouncingUpContainer>
         <SectionTitle variants={bounceUpVariants}>마음 전하실 곳</SectionTitle>
       </BouncingUpContainer>
+      <Contact />
       <BouncingUpContainer>
         <MotionDiv variants={bounceUpVariants}>
           <Accordion>
@@ -67,6 +69,9 @@ const Wrapper = styled.div`
   width: 100%;
   text-align: center;
   margin: 100px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const MotionDiv = styled(motion.div)``;
