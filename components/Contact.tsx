@@ -109,6 +109,7 @@ const Parents = styled.div`
   width: 100%;
   justify-content: space-between;
   font-size: 14px;
+  margin-top: 20px;
 `;
 
 const ContactBox = styled.div<{ isGroom?: boolean }>`
@@ -116,7 +117,7 @@ const ContactBox = styled.div<{ isGroom?: boolean }>`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   strong {
     font-weight: 600;
     font-size: 16px;
